@@ -2,9 +2,12 @@
 
 set -e
 
-KRED="\x1B[31m"   
-KNRM="\x1B[0m"                    
+KRED="\x1B[31m"
+KNRM="\x1B[0m"
 KGRN="\x1B[32m"
+
+PROJECT_TITLE=$1
+PROJECT_PATH="./src/$PROJECT_TITLE"
 
 function ERROR() {
                   
@@ -18,7 +21,8 @@ function OK() {
                
     printf $KGRN"[ OK ]: "$KNRM
     printf "%s " "$@"          
-    printf "\n"                
+    printf "\n"
+    sleep 2
 }
 
 function SUCCESS() {
@@ -28,20 +32,21 @@ function SUCCESS() {
 }
 
 function createProject() {
-  OK "Generating project directory" && { cp -r ./_template ./$TARGET && cd ./$TARGET && sleep 1 ;}
+  OK "Generating project directory" && { cp -r ./_template ./$PROJECT_PATH && cd ./$PROJECT_PATH ;}
+
   OK "Deleting old build files" && { rm -rf *.lock target ;}
-  OK "Updating project title" && { sed -i "s/template/$TARGET/g" ./Cargo.toml && sed -i "s/\$project\-title/$TARGET/g" ./src/main.rs ;}
+  OK "Updating project title" && { sed -i "s/template/$PROJECT_TITLE/g" ./Cargo.toml && sed -i "s/\$project\-title/$PROJECT_TITLE/g" ./src/main.rs ;}
   
-  SUCCESS "Project created: '$TARGET'"
+  SUCCESS "Project created: '$PROJECT_PATH'"
 }
 
 function buildProject() {
   OK "Running build. This may take a minute..." && { set +x ; cargo build ;} 2>/dev/null
-  OK "Done! Cleaning up..." && { sleep 2 ;}
+  OK "Done! Cleaning up..."
   SUCCESS "Project build complete"
 }
 
-TARGET=$1
+
 
 if [ $# -eq 0 ]; then
   echo "Parameter missing: New project name"
