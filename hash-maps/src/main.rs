@@ -1,7 +1,6 @@
 /*
- * Tutorial 16: Logging
+ * Tutorial 17: Hash maps
  * 
- * Reading input from the console.
  * To enable all logging: RUST_LOG=trace cargo run
  */
 
