@@ -76,14 +76,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "match-operator"
-version = "0.1.0"
-dependencies = [
- "log",
- "simple_logger",
-]
-
-[[package]]
 name = "num-integer"
 version = "0.1.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -123,6 +115,14 @@ checksum = "ca8a50ef2360fbd1eeb0ecd46795a87a19024eb4b53c5dc916ca1fd95fe62438"
 dependencies = [
  "libc",
  "winapi",
+]
+
+[[package]]
+name = "user-input"
+version = "0.1.0"
+dependencies = [
+ "log",
+ "simple_logger",
 ]
 
 [[package]]

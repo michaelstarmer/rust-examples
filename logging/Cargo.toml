@@ -1,5 +1,5 @@
 [package]
-name = "match-operator"
+name = "logging"
 version = "0.1.0"
 authors = ["Michael Pedersen Starmer <michael.starmer@gmail.com>"]
 edition = "2018"
@@ -7,5 +7,5 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+pretty_env_logger = "0.4.0"
 log = "0.4"
-simple_logger = "1.6.0"
