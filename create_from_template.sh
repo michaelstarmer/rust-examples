@@ -9,7 +9,7 @@ KCYN="\x1b[36m"
 
 IS_DEBUG = false
 PROJECT_TITLE=$1
-PROJECT_PATH="/home/michael/code/projects/rust/projects/small-and-simple/src/$PROJECT_TITLE"
+PROJECT_PATH="/home/michael/code/projects/rust/rust-examples/src/$PROJECT_TITLE"
 PROJECT_PATH_RELATIVE="./src/$PROJECT_TITLE"
 
 function ERROR() {
