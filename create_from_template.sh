@@ -92,6 +92,7 @@ clear
 input "$@"
 createProject
 buildProject
+
 printf "\n 1. Go to project\n\n"
 CODE "\tcd $PROJECT_PATH_RELATIVE \n"
 printf "\n 2. Start\n"

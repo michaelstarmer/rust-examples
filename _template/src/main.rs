@@ -1,17 +1,15 @@
 /*
- * multiple-src-files
+ * $project-title
  * 
- * To enable all logging: RUST_LOG=trace cargo run
+ * Run w/logging: RUST_LOG=trace cargo run
+ * Run default:   cargo run
  */
 
-use rand::prelude::*;
 mod logger;
-
 #[macro_use] extern crate log;
 
-
 fn main() {
-   
    logger::init_application();
    
+
 }
